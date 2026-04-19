@@ -1,12 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace My_Expenses
+namespace MyExpenses
 {
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+            builder.Services.AddSingleton<ICategoryService, CategoryService>();
+            builder.Services.AddSingleton<IExpenseService, ExpenseService>();
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>

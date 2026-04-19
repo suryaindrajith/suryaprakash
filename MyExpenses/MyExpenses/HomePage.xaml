@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyExpenses.HomePage">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label 
+            Text="My Expenses"
+            FontSize="32"
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="Welcome to your Expense Tracker"
+            FontSize="18"
+            HorizontalOptions="Center" />
+        <Label 
+            Text="Manage your daily expenses easily"
+            FontSize="16"
+            HorizontalOptions="Center" />
+
+        <!-- Buttons -->
+        <Button 
+            Text="Categories"
+            Clicked="OnCategoriesClicked"/>
+
+        <Button 
+            Text="Expenses"
+            Clicked="OnExpensesClicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

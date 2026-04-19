@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace My_Expenses
+namespace MyExpenses
 {
-    internal class Category
+    public class Category
     {
         
             public int Id { get; set; }

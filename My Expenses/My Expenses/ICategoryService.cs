@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace My_Expenses
+
+namespace MyExpenses
 {
     internal interface ICategoryService
     {

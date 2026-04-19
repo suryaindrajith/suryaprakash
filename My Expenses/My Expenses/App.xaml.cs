@@ -7,11 +7,10 @@ namespace My_Expenses
         public App()
         {
             InitializeComponent();
+            MainPage = new HomePage();
+        
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+       
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace My_Expenses
+﻿namespace MyExpenses
 {
     public partial class MainPage : ContentPage
     {
