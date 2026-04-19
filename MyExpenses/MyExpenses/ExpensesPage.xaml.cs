@@ -19,4 +19,9 @@ public partial class ExpensesPage : ContentPage
 
         expenseList.ItemsSource = expenses;
     }
+    private async void OnAddExpenseClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AddExpensePage());
+    }
+
 }

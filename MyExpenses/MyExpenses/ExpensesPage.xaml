@@ -11,6 +11,10 @@
             FontSize="30"
             HorizontalOptions="Center"/>
 
+        <Button 
+            Text="Add Expense" 
+            Clicked="OnAddExpenseClicked"/>
+        
         <!-- List of expenses -->
         <CollectionView x:Name="expenseList">
             <CollectionView.ItemTemplate>

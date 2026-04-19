@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyExpenses.AddExpensePage">
+
+    <VerticalStackLayout
+        Padding="20" 
+        Spacing="15">
+
+        <Label 
+            Text="Add Expense" 
+            FontSize="28"/>
+
+        <Entry 
+            x:Name="titleEntry" 
+            Placeholder="Enter title" />
+
+        <Entry 
+            x:Name="amountEntry" 
+            Placeholder="Enter amount" 
+            Keyboard="Numeric"/>
+
+        <DatePicker 
+            x:Name="datePicker" />
+
+        <Button 
+            Text="Save" 
+            Clicked="OnSaveClicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>
