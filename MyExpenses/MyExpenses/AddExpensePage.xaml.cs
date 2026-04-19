@@ -19,6 +19,7 @@ public partial class AddExpensePage : ContentPage
             Amount = amount,
             Date = date
         };
+        AppData.Expenses.Add(newExpense);
 
         await DisplayAlert("Saved", "Expense added successfully!", "OK");
 

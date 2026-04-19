@@ -10,14 +10,13 @@ public partial class ExpensesPage : ContentPage
 
     private void LoadData()
     {
-        var expenses = new List<Expense>
-        {
-            new Expense { Title = "Bus Fare", Amount = 45, Date = DateTime.Today },
-            new Expense { Title = "Lunch", Amount = 120, Date = DateTime.Today },
-            new Expense { Title = "Shopping", Amount = 500, Date = DateTime.Today }
-        };
-
-        expenseList.ItemsSource = expenses;
+        expenseList.ItemsSource = null;
+        expenseList.ItemsSource = AppData.Expenses;
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        LoadData();
     }
     private async void OnAddExpenseClicked(object sender, EventArgs e)
     {
