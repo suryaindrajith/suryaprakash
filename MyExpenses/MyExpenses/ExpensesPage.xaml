@@ -20,11 +20,21 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Padding="10" Margin="5">
-                        <VerticalStackLayout>
-                            <Label Text="{Binding Title}" FontSize="18"/>
-                            <Label Text="{Binding Amount}" />
-                            <Label Text="{Binding Date}" FontSize="12"/>
-                        </VerticalStackLayout>
+                        <HorizontalStackLayout>
+
+                            <!-- Expense Details -->
+                            <VerticalStackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding Title}" FontSize="18"/>
+                                <Label Text="{Binding Amount}" />
+                                <Label Text="{Binding Date}" FontSize="12"/>
+                            </VerticalStackLayout>
+
+                            <!-- 🔥 DELETE BUTTON -->
+                            <Button 
+                        Text="Delete"
+                        Clicked="OnDeleteClicked"/>
+
+                        </HorizontalStackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
