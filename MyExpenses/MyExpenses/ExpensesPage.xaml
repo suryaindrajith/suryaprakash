@@ -26,10 +26,11 @@
                             <VerticalStackLayout HorizontalOptions="StartAndExpand">
                                 <Label Text="{Binding Title}" FontSize="18"/>
                                 <Label Text="{Binding Amount}" />
+                                <Label Text="{Binding CategoryName}" FontSize="14"/>
                                 <Label Text="{Binding Date}" FontSize="12"/>
                             </VerticalStackLayout>
 
-                            <!-- 🔥 DELETE BUTTON -->
+                            <!-- DELETE BUTTON -->
                             <Button 
                         Text="Delete"
                         Clicked="OnDeleteClicked"/>

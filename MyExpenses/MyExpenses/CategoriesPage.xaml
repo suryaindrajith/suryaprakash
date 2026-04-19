@@ -4,13 +4,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MyExpenses.CategoriesPage">
 
-    <VerticalStackLayout
-        Padding="20">
-        
-        <Label
-            Text="Categories Page" 
-            FontSize="25"/>
-        
+    <VerticalStackLayout Padding="20">
+
+        <Label Text="Categories" FontSize="30"/>
+
+        <CollectionView x:Name="categoryList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5">
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding Icon}" FontSize="20"/>
+                            <Label Text="{Binding Name}" FontSize="18"/>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
     </VerticalStackLayout>
 
 </ContentPage>

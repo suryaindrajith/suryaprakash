@@ -24,6 +24,10 @@
         <DatePicker 
             x:Name="datePicker" />
 
+        <Picker 
+            x:Name="categoryPicker" 
+            Title="Select Category"/>
+        
         <Button 
             Text="Save" 
             Clicked="OnSaveClicked"/>
