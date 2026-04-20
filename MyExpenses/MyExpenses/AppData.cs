@@ -1,17 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 namespace MyExpenses;
 
 public static class AppData
 {
-    public static List<Expense> Expenses = new List<Expense>();
+    public static List<Expense> Expenses { get; set; } = new List<Expense>();
 
-    public static List<Category> Categories = new List<Category>
+    public static List<string> Categories { get; set; } = new List<string>
     {
-        new Category { Name = "Food", Icon = "🍔" },
-        new Category { Name = "Transport", Icon = "🚌" },
-        new Category { Name = "Shopping", Icon = "🛒" },
-        new Category { Name = "Bills", Icon = "💡" }
+        "Food",
+        "Transport",
+        "Shopping",
+        "Bills"
     };
+
+    public static void Load()
+    {
+        var data = Preferences.Get("expenses", "");
+
+        if (!string.IsNullOrEmpty(data))
+        {
+            Expenses = JsonSerializer.Deserialize<List<Expense>>(data);
+        }
+    }
+
+    public static void Save()
+    {
+        var data = JsonSerializer.Serialize(Expenses);
+        Preferences.Set("expenses", data);
+    }
 }

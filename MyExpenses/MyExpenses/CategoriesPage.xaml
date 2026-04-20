@@ -7,20 +7,16 @@
     <VerticalStackLayout Padding="20">
 
         <Label Text="Categories" FontSize="30"/>
-
+        
         <CollectionView x:Name="categoryList">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="10" Margin="5">
-                        <HorizontalStackLayout>
-                            <Label Text="{Binding Icon}" FontSize="20"/>
-                            <Label Text="{Binding Name}" FontSize="18"/>
-                        </HorizontalStackLayout>
-                    </Frame>
+                    <Label Text="{Binding .}" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
+        
     </VerticalStackLayout>
 
 </ContentPage>

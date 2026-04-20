@@ -4,33 +4,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MyExpenses.AddExpensePage">
 
-    <VerticalStackLayout
-        Padding="20" 
-        Spacing="15">
+    <VerticalStackLayout Padding="20" Spacing="15">
 
-        <Label 
-            Text="Add Expense" 
-            FontSize="28"/>
+        <Label Text="Add Expense" FontSize="28"/>
 
-        <Entry 
-            x:Name="titleEntry" 
-            Placeholder="Enter title" />
+        <Entry x:Name="titleEntry" Placeholder="Enter title" />
 
-        <Entry 
-            x:Name="amountEntry" 
-            Placeholder="Enter amount" 
-            Keyboard="Numeric"/>
+        <Entry x:Name="amountEntry" Placeholder="Enter amount" Keyboard="Numeric"/>
 
-        <DatePicker 
-            x:Name="datePicker" />
+        <DatePicker x:Name="datePicker" />
 
-        <Picker 
-            x:Name="categoryPicker" 
-            Title="Select Category"/>
-        
-        <Button 
-            Text="Save" 
-            Clicked="OnSaveClicked"/>
+        <Picker x:Name="categoryPicker" Title="Select Category">
+            <Picker.Items>
+                <x:String>Food</x:String>
+                <x:String>Transport</x:String>
+                <x:String>Shopping</x:String>
+                <x:String>Bills</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button Text="Save" Clicked="OnSaveClicked"/>
 
     </VerticalStackLayout>
 

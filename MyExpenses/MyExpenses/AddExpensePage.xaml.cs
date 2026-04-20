@@ -1,35 +1,68 @@
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
+using System;
+
 namespace MyExpenses;
 
 public partial class AddExpensePage : ContentPage
 {
+    Expense editingExpense;
+
     public AddExpensePage()
     {
         InitializeComponent();
+    }
 
-        categoryPicker.ItemsSource = AppData.Categories;
-        categoryPicker.ItemDisplayBinding = new Binding("Name");
+    public AddExpensePage(Expense expense)
+    {
+        InitializeComponent();
 
+        editingExpense = expense;
+
+        titleEntry.Text = expense.Title;
+        amountEntry.Text = expense.Amount.ToString();
+        
+        categoryPicker.SelectedItem = expense.Category;
     }
 
     private async void OnSaveClicked(object sender, EventArgs e)
     {
         string title = titleEntry.Text;
-        double amount = double.Parse(amountEntry.Text);
-        DateTime date = datePicker.Date ?? DateTime.Now;
 
-        var selectedCategory = categoryPicker.SelectedItem as Category;
+        double.TryParse(amountEntry.Text, out double amount);
 
-        var newExpense = new Expense
+        
+
+        string category = categoryPicker.SelectedItem as string;
+
+        if (string.IsNullOrEmpty(title) || category == null)
         {
-            Title = title,
-            Amount = amount,
-            Date = date,
-            CategoryName = selectedCategory?.Name
-        };
-        AppData.Expenses.Add(newExpense);
+            await DisplayAlert("Error", "Fill all fields", "OK");
+            return;
+        }
 
-        await DisplayAlert("Saved", "Expense added successfully!", "OK");
+        if (editingExpense != null)
+        {
+            editingExpense.Title = title;
+            editingExpense.Amount = amount;
+           ;
+            editingExpense.Category = category;
+        }
+        else
+        {
+            Expense newExpense = new Expense
+            {
+                Title = title,
+                Amount = amount,
+                
+                Category = category
+            };
 
-        await Navigation.PopAsync(); // go back
+            AppData.Expenses.Add(newExpense);
+        }
+
+        AppData.Save();
+
+        await Navigation.PopAsync();
     }
 }

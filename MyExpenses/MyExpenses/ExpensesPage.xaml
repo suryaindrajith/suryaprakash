@@ -30,11 +30,23 @@
                                 <Label Text="{Binding Date}" FontSize="12"/>
                             </VerticalStackLayout>
 
-                            <!-- DELETE BUTTON -->
-                            <Button 
-                        Text="Delete"
-                        Clicked="OnDeleteClicked"/>
+                            <!-- ACTION BUTTONS -->
+                            <HorizontalStackLayout Spacing="10">
 
+                                <Button 
+                                   Text="Edit"
+                                   BackgroundColor="Orange"
+                                   TextColor="White"
+                                   Clicked="OnEditClicked"
+                                   CommandParameter="{Binding .}"/>
+
+                                <Button 
+                                    Text="Delete"
+                                    BackgroundColor="Red"
+                                    TextColor="White"
+                                    Clicked="OnDeleteClicked"/>
+
+                            </HorizontalStackLayout>
                         </HorizontalStackLayout>
                     </Frame>
                 </DataTemplate>
