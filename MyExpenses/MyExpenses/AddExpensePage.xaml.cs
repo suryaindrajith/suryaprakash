@@ -17,6 +17,8 @@ public partial class AddExpensePage : ContentPage
         double amount = double.Parse(amountEntry.Text);
         DateTime date = datePicker.Date ?? DateTime.Now;
 
+        var selectedCategory = categoryPicker.SelectedItem as Category;
+
         var newExpense = new Expense
         {
             Title = title,

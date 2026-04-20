@@ -19,6 +19,19 @@
             Text="Manage your daily expenses easily"
             FontSize="16"
             HorizontalOptions="Center" />
+        <Frame Padding="15">
+            <VerticalStackLayout>
+                <Label Text="Total Expenses" FontSize="18"/>
+                <Label x:Name="totalCountLabel" FontSize="24"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Padding="15">
+            <VerticalStackLayout>
+                <Label Text="Total Amount Spent" FontSize="18"/>
+                <Label x:Name="totalAmountLabel" FontSize="24"/>
+            </VerticalStackLayout>
+        </Frame>
 
         <!-- Buttons -->
         <Button 
